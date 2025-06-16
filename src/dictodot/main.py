@@ -3,8 +3,6 @@ from collections import OrderedDict
 from typing import Generic
 from typing import TypeVar
 
-import pandas as pd
-
 
 DotDictKey = TypeVar("DotDictKey")
 DotDictValue = TypeVar("DotDictValue")
@@ -35,11 +33,11 @@ class DotDict(OrderedDict, Generic[DotDictKey, DotDictValue]):
         )
 
     @classmethod
-    def FromFrame(cls, df: pd.DataFrame):
+    def FromFrame(cls, df):
         return cls({k: v.to_numpy() for k, v in df.items()})
 
 
 def test_DotDict():
     dct = {"a": "b"}
     dotted_dct = DotDict(dct)
-    assert dotted_dict.a == dct["a"]
+    assert dotted_dct.a == dct["a"]
