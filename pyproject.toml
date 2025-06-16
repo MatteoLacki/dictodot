@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools >= 64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name="dictodot"
+version="0.0.1"
+description="Simple module to get dotted dictionary."
+readme="README.md"
+authors=[
+    {name="MatteoLacki",email="matteo.lacki@gmail.com"},
+]
+dependencies = [
+    "click",
+]
+requires-python = ">=3.6"
+
+[project.optional-dependencies]
+dev = [
+    # "twine",
+    "pytest",
+]
+
+
+[project.scripts]
+example_shell_script = "dictodot.cli.example_shell_script:example_shell_script"
+
+[project.urls]
+homepage="https://github.com/MatteoLacki/dictodot.git"
+repository="https://github.com/MatteoLacki/dictodot.git"
+
+[tool.uv]
+reinstall-package = ["dictodot"]
+
+# [tool.pytest.ini_options]
+# testpaths = ["tests"]
+
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# [tool.setuptools.package-data]
+# dictodot = ["data/*.csv"]
