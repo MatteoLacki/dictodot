@@ -41,3 +41,6 @@ def test_DotDict():
     dct = {"a": "b"}
     dotted_dct = DotDict(dct)
     assert dotted_dct.a == dct["a"]
+
+
+df2dd = lambda df: DotDict({c: df[c].to_numpy() for c in df})
