@@ -1,2 +1,1 @@
-from dictodot.main import DotDict
-from dictodot.main import df2dd
+from dictodot.main import *

@@ -44,3 +44,17 @@ def test_DotDict():
 
 
 df2dd = lambda df: DotDict({c: df[c].to_numpy() for c in df})
+
+
+def dd_zeros(shape, **name2dtype):
+    return DotDict({name: np.zeros(shape, dtype) for name, dtype in name2dtype.items()})
+
+
+def dd_empty(shape, **name2dtype):
+    return DotDict({name: np.empty(shape, dtype) for name, dtype in name2dtype.items()})
+
+
+def dd_full(shape, fill_value, **name2dtype):
+    return DotDict(
+        {name: np.full(shape, fill_value, dtype) for name, dtype in name2dtype.items()}
+    )
