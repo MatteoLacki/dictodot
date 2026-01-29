@@ -3,6 +3,7 @@ from collections import OrderedDict
 from typing import Generic
 from typing import TypeVar
 
+import numpy as np
 
 DotDictKey = TypeVar("DotDictKey")
 DotDictValue = TypeVar("DotDictValue")
@@ -47,14 +48,20 @@ df2dd = lambda df: DotDict({c: df[c].to_numpy() for c in df})
 
 
 def dd_zeros(shape, **name2dtype):
+    import numpy as np
+
     return DotDict({name: np.zeros(shape, dtype) for name, dtype in name2dtype.items()})
 
 
 def dd_empty(shape, **name2dtype):
+    import numpy as np
+
     return DotDict({name: np.empty(shape, dtype) for name, dtype in name2dtype.items()})
 
 
 def dd_full(shape, fill_value, **name2dtype):
+    import numpy as np
+
     return DotDict(
         {name: np.full(shape, fill_value, dtype) for name, dtype in name2dtype.items()}
     )
