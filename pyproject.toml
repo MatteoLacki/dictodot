@@ -12,14 +12,16 @@ authors=[
 ]
 dependencies = [
     "click",
-    "numpy",
 ]
 requires-python = ">=3.6"
 
 [project.optional-dependencies]
+numpy = [
+    "numpy",
+]
 dev = [
-    # "twine",
     "pytest",
+    "numpy",
 ]
 
 

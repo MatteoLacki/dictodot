@@ -3,8 +3,6 @@ from collections import OrderedDict
 from typing import Generic
 from typing import TypeVar
 
-import numpy as np
-
 DotDictKey = TypeVar("DotDictKey")
 DotDictValue = TypeVar("DotDictValue")
 
