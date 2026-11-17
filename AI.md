@@ -1,5 +1,9 @@
 # AI.md — dictodot
 
+History lives in `AI_CHANGELOG.md` (append-only; read it for *why* something changed).
+This file is present tense: a change rewrites its sentence here and appends an entry
+there, in the same commit.
+
 ## What this repo is
 
 Single-purpose utility: dot-notation access on top of `dict`/`OrderedDict`. One real
@@ -38,5 +42,5 @@ tests/test_numpy_optional.py
   dictodot.cli.example_shell_script:example_shell_script` — there is no `dictodot.cli`
   module in this repo. Stale/dead entry point; don't rely on it, and don't be surprised
   if `pip install`-ing this package fails to expose that console script.
-- Design rationale and history belongs here, not in code docstrings — keep `main.py`
-  comments about what the code does now, not why it changed.
+- Design rationale belongs here and history in `AI_CHANGELOG.md`, not in code
+  docstrings — keep `main.py` comments about what the code does now, not why it changed.
